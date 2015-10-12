@@ -8,6 +8,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.hostname = "newscoop"
   config.vm.network "private_network", ip: "192.168.200.3"
   config.vm.provision :shell, path: "bootstrap.sh"
+  config.vm.provision :shell, path: "bootstrap.user.sh", privileged: false
   config.vm.provision "shell", path: "restart.sh",
     run: "always"
   config.vm.provision "shell", path: "restart.user.sh", privileged: false,
