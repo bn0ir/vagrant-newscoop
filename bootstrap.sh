@@ -19,7 +19,7 @@ mkdir /vagrant/app
 
 #set apache2 configs
 export SITEDOMAIN=`cat /vagrant/config/site-domain`
-sed -e 's/{{alias}}/$SITEDOMAIN/g' /vagrant/config/apache2.conf > /etc/apache2/sites-available/php.conf
+sed -e "s/{{alias}}/$SITEDOMAIN/g" /vagrant/config/apache2.conf > /etc/apache2/sites-available/php.conf
 ln -s /etc/apache2/sites-available/php.conf /etc/apache2/sites-enabled/php.conf
 rm /etc/apache2/sites-enabled/default
 
